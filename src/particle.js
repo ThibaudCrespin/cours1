@@ -1,4 +1,4 @@
-export default class Particle {
+class Particle {
     constructor(canvas) {
         this.w = this.h = Math.random() * 5 + 5;
         this.x = Math.random() * canvas.width;
@@ -25,3 +25,5 @@ export default class Particle {
         ctx.fillRect(this.x, this.y, this.w, this.h);
     }
 }
+
+export default Particle;

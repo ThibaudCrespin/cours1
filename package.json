@@ -4,7 +4,8 @@
   "description": "Premier cours de dev JS",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",
