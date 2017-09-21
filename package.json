@@ -1,0 +1,23 @@
+{
+  "name": "cours1",
+  "version": "1.0.0",
+  "description": "Premier cours de dev JS",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThibaudCrespin"
+  },
+  "author": "Thibaud Crespin",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}
