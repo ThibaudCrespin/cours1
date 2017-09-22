@@ -1,6 +1,6 @@
 class Particle {
     constructor(canvas) {
-        this.w = this.h = Math.random() * 5 + 5;
+        this.w = this.h = 10;
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.speedX = Math.random() > 0.5 ? Math.random() : -Math.random();
@@ -15,7 +15,7 @@ class Particle {
             const sign = this.x < 0 ? -1 : 1;
             this.speedX = -(Math.random() * this.speedX + 1) * sign;
         }
-        if (this.y < 0 || (this.y + this.h) > canvas.height) {
+        if (this.y < 0 || (this.y + this.h) > (canvas.height - 100)) {
             const sign = this.y < 0 ? -1 : 1;
             this.speedY = -(Math.random() * this.speedY + 1) * sign;
         }
