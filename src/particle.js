@@ -21,7 +21,18 @@ class Particle {
         }
     }
 
+    remove() {
+        this.w = this.h = this.x = this.y = this.speedX = this.speedY = 0;
+    }
+
+    collide(ball) {
+        if(ball.x > this.x && ball.x < this.x+this.w && ball.y > this.y && ball.y < this.y+this.h) {
+            this.remove();
+        }
+    }
+
     draw(ctx) {
+        ctx.fillStyle = 'black';
         ctx.fillRect(this.x, this.y, this.w, this.h);
     }
 }

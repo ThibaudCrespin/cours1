@@ -7,20 +7,34 @@ class Ball {
         this.speedY = 3;
     }
 
-    update(canvas) {
+    static get x() {
+        return this.x;
+    }
+
+    static get y() {
+        return this.y;
+    }
+
+    update(canvas, paddle) {
         this.x += this.speedX;
         this.y += this.speedY;
 
         if (this.x < this.d || (this.x + this.d) > canvas.width) {
             const sign = this.x < 0 ? -1 : 1;
-            this.speedX = -(this.speedX) * sign;
+            this.speedX = -this.speedX * sign;
         }
         if (this.y < this.d) {
             const sign = this.y < 0 ? -1 : 1;
-            this.speedY = -(this.speedY )* sign;
-        }
-        if ((this.y + this.d) > canvas.height) {
-
+            this.speedY = -this.speedY * sign;
+        } else if ((this.y - this.d) > canvas.height) {
+            if(this.x > paddle.x && this.x < (paddle.x + paddle.w)) {
+                const sign = this.y < 0 ? -1 : 1;
+                this.speedY = -this.speedY * sign;
+            }
+            else {
+                alert("GAME OVER");
+                document.location.reload();
+            }
         }
     }
 

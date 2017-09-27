@@ -28,19 +28,19 @@ const paddle = new Paddle(canvas);
 for(let i = 0; i < NUM_PARTICLES; i++){ particles.push( new Particle(canvas) );}
 
 const animate = () => {
-    ctx.fillStyle = 'black';
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    paddle.draw(ctx, canvas);
+    paddle.move(leftPressed, rightPressed, canvas);
+
+    ball.update(canvas, paddle);
+    ball.draw(ctx);
 
     particles.forEach(p => {
         p.update(canvas);
         p.draw(ctx);
+        p.collide(ball);
     });
-
-    ball.update(canvas);
-    ball.draw(ctx);
-
-    paddle.draw(ctx, canvas);
-    paddle.move(leftPressed, rightPressed, canvas);
 
     requestAnimationFrame(animate);
 };

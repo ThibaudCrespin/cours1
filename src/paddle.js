@@ -6,6 +6,14 @@ class Paddle {
         this.speed = 7;
     }
 
+    static get w() {
+        return this.w;
+    }
+
+    static get x() {
+        return this.x;
+    }
+
     move(left, right, canvas) {
         if(right && this.x < canvas.width - this.w) {
             this.x += this.speed;
@@ -18,7 +26,7 @@ class Paddle {
     draw(ctx, canvas) {
         ctx.beginPath();
         ctx.rect(this.x, canvas.height - this.h, this.w, this.h);
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "cornflowerblue";
         ctx.fill();
         ctx.closePath();
     }
